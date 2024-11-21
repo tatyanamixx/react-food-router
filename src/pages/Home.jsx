@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { getAllCategories } from '../api';
-import { Preloader } from '../components/Preloader';
-import { CategoryList} from '../components/CategoryList'
+import { useState, useEffect } from "react";
+import { getAllCategories } from "../api";
+import { Preloader } from "../components/Preloader";
+import { CategoryList } from "../components/CategoryList";
 
 function Home() {
-	const [catalog, setCatalog] = useState();
+	const [catalog, setCatalog] = useState([]);
 
 	useEffect(() => {
 		getAllCategories().then((data) => {
@@ -14,7 +14,7 @@ function Home() {
 
 	return (
 		<>
-			{!catalog.lengh ? (
+			{!catalog.length ? (
 				<Preloader />
 			) : (
 				<CategoryList catalog={catalog} />
@@ -23,4 +23,4 @@ function Home() {
 	);
 }
 
-export {Home}
+export { Home };

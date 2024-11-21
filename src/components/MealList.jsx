@@ -1,21 +1,20 @@
 import { useNavigate } from 'react-router-dom';
-import { CategoryItem } from './CategoryItem';
+import { MealItem } from './MealItem';
 
-function CategoryList({ catalog = [] }) {
+function MealList({ meals }) {
 	const navigate = useNavigate();
-
 	return (
 		<>
 			<button className='btn' onClick={() => navigate(-1)}>
 				Go Back
 			</button>
 			<div className='list'>
-				{catalog.map((el) => (
-					<CategoryItem key={el.idCategory} {...el} />
+				{meals.map((meal) => (
+					<MealItem key={meal.idMeal} {...meal} />
 				))}
 			</div>
 		</>
 	);
 }
 
-export { CategoryList };
+export { MealList };

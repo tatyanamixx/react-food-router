@@ -1,24 +1,22 @@
-import { useState, useEffect } from "react";
-import { getAllCategories } from "../api";
-import { Preloader } from "../components/Preloader";
-import { CategoryList } from "../components/CategoryList";
+import { useState, useEffect } from 'react';
+import { getSearchMeal } from '../api';
+import { Preloader } from '../components/Preloader';
+import { Search } from '../components/Search';
+import { MealList } from '../components/MealList';
 
 function Home() {
-	const [catalog, setCatalog] = useState([]);
+	const [meals, setMeals] = useState([]);
 
 	useEffect(() => {
-		getAllCategories().then((data) => {
-			setCatalog(data.categories);
+		getSearchMeal('').then((data) => {
+			setMeals(data.meals);
 		});
 	}, []);
 
 	return (
 		<>
-			{!catalog.length ? (
-				<Preloader />
-			) : (
-				<CategoryList catalog={catalog} />
-			)}
+			<Search />
+			{!meals.length ? <Preloader /> : <MealList meals={meals} />}
 		</>
 	);
 }

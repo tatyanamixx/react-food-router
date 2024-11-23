@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getFilteredCategory } from '../api';
+import { getFilteredCategory} from '../api';
 import { Preloader } from '../components/Preloader';
 import { MealList } from '../components/MealList';
+import { useParams } from 'react-router-dom';
 
 function Category() {
 	const { name } = useParams();

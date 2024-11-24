@@ -14,6 +14,9 @@ function Recipe() {
 
 	return (
 		<>
+			<button className='btn' onClick={() => navigate(-1)}>
+				Go back
+			</button>
 			{!recipe.idMeal ? (
 				<Preloader />
 			) : (
@@ -71,7 +74,7 @@ function Recipe() {
 									src={`https://www.youtube.com/embed/${recipe.strYoutube.slice(
 										-11
 									)}`}
-									allowfullscreen
+									// allowfullscreen
 									// https://www.youtube.com/watch?v=4aZr5hZXP_s
 								></iframe>
 							</div>

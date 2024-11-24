@@ -14,7 +14,7 @@ import { Catalog } from './pages/Catalog';
 function App() {
 	return (
 		<>
-			<Router>
+			<Router basename='/react-food-router'>
 				<div className='App'>
 					<Header />
 					<main className='container content'>
